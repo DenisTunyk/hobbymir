@@ -1,0 +1,150 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto',sans-serif; }
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #ffffff; }
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background: #3b4750;
+  height: 45px;
+  z-index: 1000; }
+
+header #button-menu {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  float: right; }
+@media screen and (max-width: 1600px) {
+  header #button-menu {
+    display: none; } }
+@media screen and (max-width: 768px) {
+  header #button-menu {
+    display: block; } }
+
+.navegacion {
+  position: absolute;
+  top: 100%;
+  /*Для позиционированного элемента определяет расстояние от верхнего края
+  родительского элемента до верхнего края дочернего элемента.
+   Для navegacion родителем является header */
+  left: 0;
+  /*Задает задний фон при движении меню*/
+  width: 0%;
+  height: 100vh;
+  /* высота секции равна высоте области просмотра */
+  /*Когда открывается меню, оно закрывает остальной контент*/
+  /* своим прозрачным фоном*/
+  background: rgba(0, 0, 0, 0.6);
+  /* прозрачность 60%*/
+  /*background: rgb( 0, 255, 0);  чистый зеленый цвет */
+  /*Для RGBA добавляется четвертый параметр — альфапрозрачность (от 0 до 1).*/
+  /*background: rgba( 255, 0, 0, 0.5);  чистый красный с прозрачностью 50% */ }
+
+.navegacion ul {
+  width: 280px;
+  height: 100%;
+  background: #646f75;
+  list-style: none;
+  /*List-style : Универсальное свойство, позволяющее одновременно задать
+   стиль маркера, его положение, а также изображение, которое будет
+   использоваться в качестве маркера.*/
+  position: absolute;
+  top: 0;
+  /*Убираем меню с экрана, будем открывать только по нажатию*/
+  left: 0px;
+  /*Плавный выход меню*/
+  transition: left .3s; }
+@media screen and (max-width: 1600px) {
+  .navegacion ul {
+    /*Убираем меню с экрана, будем открывать только по нажатию*/
+    left: 0px; } }
+@media screen and (max-width: 768px) {
+  .navegacion ul {
+    /*Убираем меню с экрана, будем открывать только по нажатию*/
+    left: -280px; } }
+@media screen and (max-width: 320px) {
+  .navegacion ul {
+    width: 100%; } }
+.navegacion .menu {
+   /*Псевдоэлемент, который используется для вывода желаемого
+текста после содержимого элемента, к которому он добавляется.
+ Псевдоэлемент :after работает совместно со свойством content.*/ }
+  .navegacion .menu li.title-menu {
+    padding: 14px;
+    background: #646f75;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: solid 1px #3b4750; }
+  .navegacion .menu a {
+    font-size: 12px;
+    font-weight: 200;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    background: #646f75;
+    color: #fff;
+    border-bottom: solid 1px #3b4750; }
+  .navegacion .menu a:hover {
+    color: orange;
+    background: #3b4750; }
+  .navegacion .menu .item-submenu > a::after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f105';
+    float: right; }
+  .navegacion .menu li span.icon-menu {
+    margin-right: 12px; }
+
+.submenu {
+  display: block; }
+
+.navegacion .submenu li.title-menu {
+  padding: 14px;
+  background: #646f75;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: solid 1px #3b4750; }
+.navegacion .submenu li.goback {
+  background: #3b4750;
+  font-size: 12px;
+  font-weight: 200;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  border-bottom: solid 1px #3b4750; }
+.navegacion .submenu li.goback::before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\f0d9';
+  margin-right: 10px; }
+.navegacion .submenu li.goback:hover {
+  color: orange; }
+@media screen and (max-width: 1600px) {
+  .navegacion .submenu {
+    left: -280px; } }
+
+@media screen and (min-width: 768px) {
+  .container-fluid .row .col-xs-12 {
+    padding-left: 295px; } }
+
+/*# sourceMappingURL=style.css.map */
